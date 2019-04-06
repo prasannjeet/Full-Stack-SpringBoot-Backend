@@ -35,10 +35,10 @@ public class BikesController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity.BodyBuilder create (@RequestBody Bike bike) {
+    public String create (@RequestBody Bike bike) {
         bikesRepository.save(bike);
-//        return "Added new bike with name: "+bike.getName();
-        return ResponseEntity.ok();
+        return "Added new bike with name: "+bike.getName();
+//        return ResponseEntity.ok();
     }
 
 //    public Bike get(@PathVariable("id") long id) {
